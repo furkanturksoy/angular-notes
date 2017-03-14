@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="anchor">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="../angular.min.js"></script>
+    <script src="angular-route.min.js">
+        
+    </script>
+
+</head>
+<body>
+    <div id="container" style="width: 850px; margin:auto; background-color:gray;">
+        <header>
+              <div><p style="margin : auto; width: 200px;">hello world</p></div>  
+        </header>
+        <section id="side-nav" style="width: 250px; height: auto; display:inline-block; background-color:cadetblue;">
+            <a href="#/home" style="display:block">Home</a>
+            <a href="#/about" style="display:block">About</a>
+        </section>
+
+        <div id="main" style="display:inline-block; width: 500px; height: 500px; background-color:coral;">
+            <ng-view></ng-view>
+        </div>
+
+    </div>
+</body>
+</html>

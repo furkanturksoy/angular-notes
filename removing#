@@ -1,0 +1,4 @@
+1. we need to inject $locationProvider
+2. inside config method call $locationProvider.html5Mode(true);
+3. remove the # from the links 
+4. 

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="../angular.min.js">
+        
+    </script>
+    <script src="anchor.js"></script>
+</head>
+<body ng-app="anchor">
+
+    <div ng-controller="anchorController">
+            <button id="top" ng-click="scrollTo('bottom')">go to bottom</button>
+            <div class="content" style="height: 5000px; width: 400px">
+
+
+            </div>
+            <button id="bottom" ng-click="scrollTo('top')"> go to top</button>
+    </div>
+</body>
+</html>
