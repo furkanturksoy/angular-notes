@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="angular.min.js">
+        
+    </script>
+    <script src="script.js"></script>
+</head>
+<body ng-app="somemodule">
+    <div ng-controller="helloController">
+        <div>
+            name : {{country.name}}
+            
+        </div>
+        <div>
+            country : {{country.country}}
+
+        </div>
+        <div>
+            <img src="{{country.flag}}"> <!-- this will not work because we dont have the image when this runs to resolve this we use ng-src-->
+            <img ng-src="{{country.flag}}" >
+        </div>
+    </div>
+
+    <div ng-controller="myController">
+        <p>{{message}}</p>
+    </div>
+</body>
+</html>

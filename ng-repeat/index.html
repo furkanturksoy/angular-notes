@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="angular.min.js">
+        
+    </script>
+    <script src="script.js"></script>
+</head>
+<body ng-app="somemodule">
+    <div ng-controller="helloController">
+      <div ng-repeat="item in country">
+          <div>{{item.name}}</div>
+          <div>{{item.surname}}</div>
+          <div>{{item.salary}}</div>
+          <div>{{item.etc}}</div>
+
+          <!--nesting    -->
+
+          <div ng-repeat="item in countries">
+              {{item.name}}
+              <ul ng-repeat="cities in item.cities">
+                  <li>cities.name + {{$index}}</li> <!--index gives the currnent index of the loop-->
+                  <li>cities.name + {{$parent.$index}}</li> <!--parent.index gets the index of the parent-->
+              </ul>
+          </div>
+      </div>
+    </div>
+</body>
+</html>

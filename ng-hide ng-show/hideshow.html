@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="../angular.min.js"></script>
+    <script src="script.js">       
+    </script>
+</head>
+<body ng-app="displaying">
+    <div ng-controller="displayingController">
+        <input type="checkbox" ng-model="hideSalary">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th>Gender</th>
+                    <th>Salary (number)</th>
+                    <th ng-hide="hideSalary">Salary (currency)</th>
+                </tr>
+            </thead>
+            <tbody >
+                <tr ng-repeat="employee in employees | limitTo:rowLimit "> 
+                    <td>{{employee.name | uppercase}}</td> 
+                    <td>{{employee.dateofbirth | date: "dd/MM/yyyy"}}</td>
+                    <td>{{employee.gender | lowercase}}</td> 
+                    <td>{{employee.salary | number: 2}}</td> 
+                    <td>{{employee.salary | currency: "a"}}</td> 
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

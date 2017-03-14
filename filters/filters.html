@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="../angular.min.js"></script>
+    <script src="script.js">       
+    </script>
+</head>
+<body ng-app="displaying">
+    <div ng-controller="displayingController">
+        <input type="number" step="1" min="0" max="5" ng-model="rowLimit">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th>Gender</th>
+                    <th>Salary (number)</th>
+                    <th>Salary (currency)</th>
+                </tr>
+            </thead>
+            <tbody >
+                <tr ng-repeat="employee in employees | limitTo:rowLimit ">  <!--this filter limits the foreach loop-->
+                    <td>{{employee.name | uppercase}}</td> <!--uppercase filter-->
+                    <td>{{employee.dateofbirth | date: "dd/MM/yyyy"}}</td> <!--date  filter-->
+                    <td>{{employee.gender | lowercase}}</td> <!--lowercase filter-->
+                    <td>{{employee.salary | number: 2}}</td> <!--number / the given value represents the last 2 digits filter-->
+                    <td>{{employee.salary | currency: "a"}}</td> <!--currency filter default is $-->
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="../../angular.min.js"></script>
+    <script src="sorting.js">       
+    </script>
+</head>
+<body ng-app="displaying">
+    <div ng-controller="displayingController">
+        <input type="text" name="" value="" ng-model="sortBy.city">
+        <input type="text" ng-model="sortBy.name">
+        <input type="checkbox" ng-model = "checked">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th>Gender</th>
+                    <th>Salary (number)</th>
+                    <th>Salary (currency)</th>
+                </tr>
+            </thead>
+            <tbody >
+                <tr ng-repeat="employee in employees | filter: sortBy : checked ">
+                    <td>{{employee.name | uppercase}}</td> 
+                    <td>{{employee.dateofbirth | date: "dd/MM/yyyy"}}</td> 
+                    <td>{{employee.gender | lowercase}}</td> 
+                    <td>{{employee.salary | number: 2}}</td> 
+                    <td>{{employee.salary | currency: "a"}}</td> 
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,10 @@
+ng-model
+
+input
+select
+textarea
+
+elementleriyle kullanılabilir
+
+aynı zamanda employee gibi kompleks objelerlede çalışabilir
+
